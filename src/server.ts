@@ -34,7 +34,8 @@ app.use('/api/codeBlock', codeBlockRoutes)
 setupSocketAPI(server)
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve('public', 'public/index.html'))
+  console.log('Catch-all route hit for:', req.originalUrl)
+  res.sendFile(path.resolve('public', 'index.html'))
 })
 
 server.listen(port, () => {
