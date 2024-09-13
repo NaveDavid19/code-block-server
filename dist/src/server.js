@@ -33,6 +33,10 @@ else {
 }
 app.use('/api/codeBlock', codeBlock_routes_1.codeBlockRoutes);
 (0, socket_service_1.setupSocketAPI)(server);
+app.get('*', (req, res) => {
+    console.log('Catch-all route hit for:', req.originalUrl);
+    res.sendFile(path_1.default.resolve('public', 'index.html'));
+});
 server.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
 });
