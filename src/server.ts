@@ -34,7 +34,7 @@ app.use('/api/codeBlock', codeBlockRoutes)
 setupSocketAPI(server)
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve('public', 'index.html'))
+  res.sendFile(path.resolve('public', 'public/index.html'))
 })
 
 server.listen(port, () => {
